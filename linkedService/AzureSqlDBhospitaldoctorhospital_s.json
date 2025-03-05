@@ -1,0 +1,22 @@
+{
+	"name": "AzureSqlDBhospitaldoctorhospital_s",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"db_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "appsqlserver00.database.windows.net",
+			"database": "hospitaldoctor-hospital",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqladmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEFCRTk0RUI3LUQ3OUMtNEU1QS04RjE4LTg0OUI0QTczM0UwM185MDAxZTAwNC0xNTY2LTQ1YmYtODU3Yy02NmYwZDk0NWVhNDIiDQp9"
+		}
+	}
+}

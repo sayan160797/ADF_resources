@@ -1,0 +1,9 @@
+{
+	"name": "hospitaldoctorstorageadf-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "72dcf4db-9cad-47c4-9103-d61d19eec868",
+		"tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7"
+	}
+}
