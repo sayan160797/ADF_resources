@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "hospitaldoctorstorageadf-dev"
+		},
+		"AzureDatabricksDeltaLake1_ls_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_password": {
+			"value": ""
+		},
+		"hospitaldoctorstorage_ls_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_server": {
+			"value": "appsqlserver00.database.windows.net"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_database": {
+			"value": "hospitaldoctor-hospital"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"hospitaldoctorstorage_ls_properties_typeProperties_url": {
+			"value": "https://hospitaldoctorstorage.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

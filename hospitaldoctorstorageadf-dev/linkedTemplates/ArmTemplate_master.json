@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "hospitaldoctorstorageadf-dev"
+		},
+		"AzureDatabricksDeltaLake1_ls_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksDeltaLake1_ls'"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDBhospitaldoctorhospital_s'"
+		},
+		"hospitaldoctorstorage_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'hospitaldoctorstorage_ls'"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "appsqlserver00.database.windows.net"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "hospitaldoctor-hospital"
+		},
+		"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"hospitaldoctorstorage_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://hospitaldoctorstorage.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "hospitaldoctorstorageadf-dev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricksDeltaLake1_ls_accessToken": {
+						"value": "[parameters('AzureDatabricksDeltaLake1_ls_accessToken')]"
+					},
+					"AzureSqlDBhospitaldoctorhospital_s_password": {
+						"value": "[parameters('AzureSqlDBhospitaldoctorhospital_s_password')]"
+					},
+					"hospitaldoctorstorage_ls_accountKey": {
+						"value": "[parameters('hospitaldoctorstorage_ls_accountKey')]"
+					},
+					"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_server')]"
+					},
+					"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_database')]"
+					},
+					"AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDBhospitaldoctorhospital_s_properties_typeProperties_userName')]"
+					},
+					"hospitaldoctorstorage_ls_properties_typeProperties_url": {
+						"value": "[parameters('hospitaldoctorstorage_ls_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
